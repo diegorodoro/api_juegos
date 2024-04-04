@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Games</title>
+    </head>
+    <body>
+        <h1>Juegos</h1>
+        {% if games %}
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Desarrollador</th>
+                    <th>Año lanzamiento</th>
+                    <th>Plataforma</th>
+                    <th>Clasificacion</th>
+                </tr>
+
+                    {% for game in games %}
+                    <tr>
+                        <th>{{ game["id"] }}</th>
+                        <th>{{ game["titulo"]}}</th>
+                        <th>{{ game["desarrollador"] }}</th>
+                        <th>{{ game["año lanzamiento"] }}</th>
+                        <th>{{ game["plataforma"] }}</th>
+                        <th>{{ game["clasificacion"] }}</th>
+                    </tr>
+                    {% endfor %}
+
+            </table>
+        {% else %}
+            <h3>No hay games</h3>
+        {% endif %}
+        
+    </body>
+</html>

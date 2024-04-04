@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
 
+# Render: https://api-juegos-gzco.onrender.com
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 
@@ -15,7 +17,6 @@ class Game(db.Model):
     anio_lanzamiento = db.Column(db.Integer, nullable=False)
     plataforma = db.Column(db.String(120), nullable=False)
     clasificacion = db.Column(db.String(120), nullable=False)
-
 
     # Representación
     def __init__(self,titulo,desarrollador,year,plataforma,clasificacion):
